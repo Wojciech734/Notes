@@ -4,16 +4,16 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class HomeController {
+public class ExampleController {
 
 
-    @GetMapping("/homeController")
-    public String home() {
+    @GetMapping("/example-home-1")
+    public String homeExample() {
         return "home controller 1";
     }
 
-    @GetMapping("/home")
-    public String home2() {
+    @GetMapping("/example-home-2")
+    public String homeExample2() {
         return "home controller 2";
     }
 
