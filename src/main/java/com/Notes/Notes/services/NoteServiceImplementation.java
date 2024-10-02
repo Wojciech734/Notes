@@ -47,15 +47,33 @@ public class NoteServiceImplementation implements NoteService {
         Note note = findNoteById(noteId);
         User user = userService.findUserById(userId);
         if (note.getUser().getId()!=user.getId()) {
-            throw new Exception("cannot delete note with given id!");
+            throw new Exception("you can't edit and delete notes that aren't yours!");
         }
         noteRepository.delete(note);
         return "successfully deleted note!";
     }
 
     @Override
-    public Note editNote(Note note, int id) throws Exception {
-        return null;
+    public Note editNote(Note note, int noteId, int userId) throws Exception {
+        Optional<Note> noteToEdit = noteRepository.findById(noteId);
+
+        if (noteToEdit.isEmpty()) {
+            throw new Exception("note doesn't exists!");
+        }
+        Note oldNote = noteToEdit.get();
+
+        if (oldNote.getUser().getId() != userId) {
+            throw new Exception("you can't edit notes that aren't yours!");
+        }
+
+        if (note.getName() != null) {
+            oldNote.setName(note.getName());
+        }
+        if (note.getContent() != null) {
+            oldNote.setContent(note.getContent());
+        }
+        oldNote.setEditedAt(LocalDateTime.now());
+        return noteRepository.save(oldNote);
     }
 
     @Override

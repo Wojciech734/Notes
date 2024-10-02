@@ -12,7 +12,7 @@ public interface NoteService {
 
     public String deleteNote(int noteId, int userId) throws Exception;
 
-    public Note editNote(Note note, int id) throws Exception;
+    public Note editNote(Note note, int noteId, int userId) throws Exception;
 
     public List<Note> findAllNotesByUserId(int userId);
 
