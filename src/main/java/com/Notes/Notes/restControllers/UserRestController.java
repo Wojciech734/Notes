@@ -1,4 +1,4 @@
-package com.Notes.Notes.controller;
+package com.Notes.Notes.restControllers;
 
 import com.Notes.Notes.models.User;
 import com.Notes.Notes.repository.UserRepository;
@@ -10,7 +10,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/users")
-public class UserApi {
+public class UserRestController {
 
     @Autowired
     UserRepository userRepository;

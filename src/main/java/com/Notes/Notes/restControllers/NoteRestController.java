@@ -1,4 +1,4 @@
-package com.Notes.Notes.controller;
+package com.Notes.Notes.restControllers;
 
 import com.Notes.Notes.models.Note;
 import com.Notes.Notes.repository.NoteRepository;
@@ -11,7 +11,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/notes")
-public class NoteApi {
+public class NoteRestController {
 
     @Autowired
     NoteService noteService;
