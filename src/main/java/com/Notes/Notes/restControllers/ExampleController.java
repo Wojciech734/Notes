@@ -1,4 +1,4 @@
-package com.Notes.Notes.controller;
+package com.Notes.Notes.restControllers;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
