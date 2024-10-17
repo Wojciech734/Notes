@@ -3,8 +3,6 @@ package com.Notes.Notes.services;
 import com.Notes.Notes.models.Note;
 import com.Notes.Notes.models.User;
 import com.Notes.Notes.repository.NoteRepository;
-import com.Notes.Notes.repository.UserRepository;
-import org.aspectj.weaver.ast.Not;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -78,7 +76,6 @@ public class NoteServiceImplementation implements NoteService {
 
     @Override
     public List<Note> findAllNotesByUserId(int userId) {
-//        return noteRepository.findAllNotesByUserId(userId);
         return noteRepository.findAllByUserId(userId);
     }
 

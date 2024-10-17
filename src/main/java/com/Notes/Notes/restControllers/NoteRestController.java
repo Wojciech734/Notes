@@ -28,11 +28,6 @@ public class NoteRestController {
         return noteService.findAllNotesByUserId(userId);
     }
 
-//    @GetMapping("/user/{noteId}")
-//    public Note findNoteById(@PathVariable("noteId") int noteId) throws Exception{
-//        return noteService.findNoteById(noteId);
-//    }
-
     @PostMapping("/create-note/user/{userId}")
     public Note createNote(
             @RequestBody Note note,

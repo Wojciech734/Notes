@@ -2,7 +2,7 @@ package com.Notes.Notes.servicesTests;
 
 import com.Notes.Notes.models.User;
 import com.Notes.Notes.repository.UserRepository;
-import com.Notes.Notes.services.UserServiceImpImplementation;
+import com.Notes.Notes.services.UserServiceImplementation;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
@@ -21,7 +21,7 @@ public class UserServiceTests {
     private UserRepository userRepository;
 
     @InjectMocks
-    private UserServiceImpImplementation userService;
+    private UserServiceImplementation userService;
 
     @BeforeEach
     void setUp() {
